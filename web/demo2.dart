@@ -34,7 +34,7 @@ void main() {
 // Custom detection routine.
 void collisionDemo() {
   document.body.style.backgroundColor =
-      player.detectCollision(dude) ?  "#ffcc00" : "cornflowerblue";
+      player.detectCollision(dude) ? "#ffcc00" : "cornflowerblue";
   if (player.x > 333) {
     player.x = -50;
   }
