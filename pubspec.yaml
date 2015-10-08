@@ -1,10 +1,10 @@
-name: 'demo1'
+name: 'simplegamelibdemos'
 version: 0.0.1
-description: Hello World equivalent for simplegamelib.
+description: Selection of demonstration programs for simplegamelib.
 environment:
   sdk: '>=1.0.0 <2.0.0'
 
 dependencies:
   browser: '>=0.10.0 <0.11.0'
   dart_to_js_script_rewriter: '^0.1.0'
-  simplegamelib: '^0.0.5'
+  simplegamelib: '^0.0.6'
