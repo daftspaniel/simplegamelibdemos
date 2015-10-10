@@ -1,0 +1,49 @@
+// Copyright (c) 2015, Davy Mitchell. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
+
+import 'dart:html';
+import 'package:simplegamelib/simplegamelib.dart';
+
+Sprite player;
+AudioBank sounds = new AudioBank();
+Game game = new Game("My Game", '#surface');
+
+void main() {
+
+  sounds.load('test', 'sounds/coin.mp3');
+  player = game.createSprite('images/ninjadude.png');
+  game.player.sprite = player;
+  game.renderer.liveBackground.setImageBackground('images/background.png');
+
+  for (int i = 0; i < 3; i++) {
+    Sprite heart = new Sprite.fromFilename('images/heart.png');
+    heart
+      ..position = new Point(100 + (i * 75), 100)
+      ..width = 24
+      ..height = 24;
+    heart.updatePos();
+    game.collectablesGroup.add(heart);
+  }
+
+  player
+    ..position = new Point(0, 30)
+    ..movement = new Point(0, 0)
+    ..width = 48
+    ..height = 48;
+
+  game.customUpdate = soundDemo;
+
+  print('starting game...');
+  game.setUpKeys();
+  game.start();
+}
+
+void soundDemo() {
+  List<Sprite> pickedHearts = game.collectablesGroup.detectCollision(player);
+
+  pickedHearts.forEach((Sprite heart) {
+    heart.alive = false;
+    game.collectablesGroup.removeDead();
+    sounds.play("test");
+  });
+}
