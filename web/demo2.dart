@@ -9,13 +9,13 @@ Sprite player, dude;
 void main() {
   Game game = new Game("My Game", '#surface');
 
-  player = game.createSprite("images/ninjadude.png");
+  player = game.createSprite("images/ninjadude.png",48,48);
 
   player
     ..position = new Point(0, 10)
     ..movement = Movements.east;
 
-  dude = game.createSprite("images/ninjadude.png");
+  dude = game.createSprite("images/ninjadude.png",48,48);
 
   dude..position = new Point(200, 20);
 

@@ -11,11 +11,11 @@ Game game = new Game("My Game", '#surface');
 
 void main() {
 
-  backTree = game.createSprite("images/ftree.png");
-  backTree2 = game.createSprite("images/ftree.png");
-  player = game.createSprite("images/ninjadude.png");
-  foreTree = game.createSprite("images/ftree.png");
-  foreTree2 = game.createSprite("images/ftree.png");
+  backTree = game.createSprite("images/ftree.png",48,48);
+  backTree2 = game.createSprite("images/ftree.png",48,48);
+  player = game.createSprite("images/ninjadude.png",48,48);
+  foreTree = game.createSprite("images/ftree.png",48,48);
+  foreTree2 = game.createSprite("images/ftree.png",48,48);
 
   player
     ..position = new Point(0, 30)

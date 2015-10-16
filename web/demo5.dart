@@ -11,12 +11,12 @@ Game game = new Game("My Game", '#surface');
 void main() {
 
   sounds.load('test', 'sounds/coin.mp3');
-  player = game.createSprite('images/ninjadude.png');
+  player = game.createSprite('images/ninjadude.png',48,48);
   game.player.sprite = player;
   game.renderer.liveBackground.setImageBackground('images/background.png');
 
   for (int i = 0; i < 3; i++) {
-    Sprite heart = new Sprite.fromFilename('images/heart.png');
+    Sprite heart = new Sprite.fromFilename('images/heart.png',48,48);
     heart
       ..position = new Point(100 + (i * 75), 100)
       ..width = 24
