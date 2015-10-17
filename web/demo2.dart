@@ -16,13 +16,7 @@ void main() {
     ..movement = Movements.east;
 
   dude = game.createSprite("images/ninjadude.png",48,48);
-
   dude..position = new Point(200, 20);
-
-  dude.height = 48;
-  dude.width = 48;
-  player.height = 48;
-  player.width = 48;
 
   game.customUpdate = collisionDemo;
 
