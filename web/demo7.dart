@@ -9,19 +9,23 @@ Sprite player, wall;
 void main() {
   Game game = new Game("My Game", '#surface');
   SpriteGroup walls = new SpriteGroup();
-  walls.add(wall);
-  player.obstacles = walls;
   player = game.createSprite("images/ninjadude.png", 48, 48);
   wall = game.createSprite("images/brick.png", 100, 100);
 
+  game.player.sprite = player;
+  walls.canvas = player.canvas;
+  walls.add(wall);
+
   player
     ..position = new Point(0, 10)
-    ..movement = Movements.east
-    ..speed = 2;
+    ..movement = Movements.none
+    ..speed = 3
+    ..obstacles = walls;
 
-  wall..position = new Point(200, 0);
+  wall..position = new Point(150, 0);
 
   print('starting game...');
-
-  game.start();
+  game
+    ..setUpKeys()
+    ..start();
 }
