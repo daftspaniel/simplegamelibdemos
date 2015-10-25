@@ -9,27 +9,21 @@ AudioBank sounds = new AudioBank();
 Game game = new Game("My Game", '#surface');
 
 void main() {
-
   sounds.load('test', 'sounds/coin.mp3');
-  player = game.createSprite('images/ninjadude.png',48,48);
-  game.player.sprite = player;
-  game.renderer.liveBackground.setImageBackground('images/background.png');
+  player = game.createSprite('images/ninjadude.png', 48, 48);
+  game
+    ..player.sprite = player
+    ..renderer.liveBackground.setImageBackground('images/background.png');
 
   for (int i = 0; i < 3; i++) {
-    Sprite heart = new Sprite.fromFilename('images/heart.png',48,48);
-    heart
-      ..position = new Point(100 + (i * 75), 100)
-      ..width = 24
-      ..height = 24;
-    heart.updatePos();
-    game.collectablesGroup.add(heart);
+    Sprite heart = new Sprite.fromFilename('images/heart.png', 48, 48);
+    heart.position = new Point(100 + (i * 75), 100);
+    game.collectiblesGroup.add(heart);
   }
 
   player
     ..position = new Point(0, 30)
-    ..movement = new Point(0, 0)
-    ..width = 48
-    ..height = 48;
+    ..movement = new Point(0, 0);
 
   game.customUpdate = soundDemo;
 
@@ -39,11 +33,11 @@ void main() {
 }
 
 void soundDemo() {
-  List<Sprite> pickedHearts = game.collectablesGroup.detectCollision(player);
+  List<Sprite> pickedHearts = game.collectiblesGroup.detectCollision(player);
 
   pickedHearts.forEach((Sprite heart) {
     heart.alive = false;
-    game.collectablesGroup.removeDead();
+    game.collectiblesGroup.removeDead();
     sounds.play("test");
   });
 }
