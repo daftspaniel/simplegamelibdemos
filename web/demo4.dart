@@ -8,7 +8,7 @@ Sprite player;
 Game game = new Game("My Game", '#surface');
 
 void main() {
-  player = game.createSprite("images/ninjadude.png",48,48);
+  player = game.createSprite("images/ninjadude.png", 48, 48);
   game.player.sprite = player;
 
   player

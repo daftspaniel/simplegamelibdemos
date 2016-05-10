@@ -15,7 +15,7 @@ void main() {
   game
     ..player = new Player.withNotifications(updateScorePanel)
     ..player.sprite = player
-    ..renderer.liveBackground.setImageBackground('images/background.png');
+    ..renderer.liveBackground.loadImage('images/background.png');
 
   createCollectibles();
 

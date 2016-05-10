@@ -6,7 +6,7 @@ import 'package:simplegamelib/simplegamelib.dart';
 
 void main() {
   Game game = new Game("My Game", '#surface');
-  Sprite player = game.createSprite("images/ninjadude.png",48,48);
+  Sprite player = game.createSprite("images/ninjadude.png", 48, 48);
 
   player
     ..position = new Point(0, 10)

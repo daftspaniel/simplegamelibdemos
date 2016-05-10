@@ -13,7 +13,7 @@ void main() {
   player = game.createSprite('images/ninjadude.png', 48, 48);
   game
     ..player.sprite = player
-    ..renderer.liveBackground.setImageBackground('images/background.png');
+    ..renderer.liveBackground.loadImage('images/background.png');
 
   for (int i = 0; i < 3; i++) {
     Sprite heart = new Sprite.fromFilename('images/heart.png', 48, 48);
