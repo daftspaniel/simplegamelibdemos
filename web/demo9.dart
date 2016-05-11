@@ -11,7 +11,7 @@ void main() {
     ..setDyingImage('images/deaddude.png')
     ..cyclesToDie = 1000;
   for (int i = 0; i < 5; i++) {
-    var fireball = game.createSprite('images/fire.png', 24, 24);
+    var fireball = game.createSprite('images/fireball.png', 24, 24);
     fireball
       ..movement = Movements.west
       ..x = 290 + i * 100
